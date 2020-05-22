@@ -1,0 +1,37 @@
+scp fw_cortex_m4.sh /usr/local/OpenAMP_TTY_echo/
+
+cd /usr/local/OpenAMP_TTY_echo/ 
+
+chmod +rwx fw_cortex_m4.sh
+
+./fw_cortex_m4.sh start
+
+
+stty -onlcr -echo -F /dev/ttyRPMSG0
+
+
+cat /dev/ttyRPMSG0 &
+
+
+echo "led7on" >/dev/ttyRPMSG0
+
+
+
+ifconfig eth0 141.100.131.123 netmask 255.255.255.0 up
+
+
+
+Debug folder where the elf file gets compiled : 
+/home/labpc10/STM32MPU_workspace/STM32MP15-Ecosystem-v1.0.0/Developer-Package/STM32Cube_FW_MP1_V1.0.0/Projects/STM32MP157C-DK2/Applications/OpenAMP/OpenAMP_TTY_echo/SW4STM32/OpenAMP_TTY_echo/Debug
+
+
+@141.100.131.123:
+
+
+
+
+stm32mp1-RPLidar_M4-extlinux-config.inc
+
+
+/home/labpc10/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin
+export PATH=/home/labpc10/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin:$PATH

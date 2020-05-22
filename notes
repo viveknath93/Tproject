@@ -1,0 +1,14 @@
+QBackingStore enables the use of QPainter to paint on a QWindow with type RasterSurface. The other way of rendering to a QWindow is through the use of OpenGL with QOpenGLContext.
+
+A QBackingStore contains a buffered representation of the window contents, and thus supports partial updates by using QPainter to only update a sub region of the window contents.
+
+QBackingStore might be used by an application that wants to use QPainter without OpenGL acceleration and without the extra overhead of using the QWidget or QGraphicsView UI stacks. For an example of how to use QBackingStore see the Raster Window Example.
+
+
+
+
+
+Use of keyword explicit: 
+In another words, if you construct an object and there is no constructor that takes exactly the same types as you are trying to pass, the compiler tries to find conversions from the types you pass to the types there is a constructor for available. The "explicit" keyword prevents that mechanism.
+
+For example if you have a constructor that takes an integer and you try to pass a double to it, the compiler will do an implicit conversion from double to int and will use the constructor taking an int. If you make that constructor explicit, the compiler will not try to convert your double to int but instead will throw an error.
